@@ -1,0 +1,9 @@
+ip:127.0.0.1
+port:1015
+log_dir:
+log_single:false
+log_size:2k
+log_date:true
+log_sep:,
+timeout:5000
+stop:

@@ -74,7 +74,13 @@ namespace TcpDataExchangeService
             try
             {
                 if (string.IsNullOrWhiteSpace(this.sDirPath))
-                    this.sDirPath = $@"{AppDomain.CurrentDomain.BaseDirectory}\log";
+                {
+                    string sProjectDir = Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).Parent.Parent.FullName;
+                    this.sDirPath = $@"{sProjectDir}\log";
+
+                    if(!Directory.Exists(this.sDirPath))
+                        Directory.CreateDirectory(this.sDirPath);
+                }
 
                 if (this.bSingleFile)
                 {

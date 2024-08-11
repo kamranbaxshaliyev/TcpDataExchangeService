@@ -48,7 +48,8 @@ namespace TcpDataExchangeService
             const string sSTOP = "stop";
             const string sSTOP_DEFAULT = "exit";
 
-            string sCONFIG_PATH = $@"{AppDomain.CurrentDomain.BaseDirectory}\config.txt";
+            string sProjectDir = Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).Parent.Parent.FullName;
+            string sCONFIG_PATH = $@"{sProjectDir}\Properties\config.txt";
 
             try
             {
